@@ -42,8 +42,8 @@ var issueTrackerApp = angular.module('issueTrackerApp',
                             }
 						})
 						.when('/projects/:id', {
-							templateUrl: 'templates/project-details.html',
-							controller: 'ProjectDetailCtrl',
+							templateUrl: 'templates/project-view.html',
+							controller: 'ProjectViewCtrl',
                             data: {
                                 requireLogin: true
                             }
