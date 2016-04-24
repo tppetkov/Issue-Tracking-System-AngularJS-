@@ -55,6 +55,13 @@ var issueTrackerApp = angular.module('issueTrackerApp',
                                 requireLogin: true
                             }
 						})
+						.when('/profile', {
+							templateUrl: 'templates/profile-details.html',
+							controller: 'CommonCtrl',
+							data: {
+								requireLogin: true
+							}
+						})
 						.otherwise({redirectTo: '/'});
 			}])
 		.constant('BASE_URL', 'http://softuni-issue-tracker.azurewebsites.net/')
