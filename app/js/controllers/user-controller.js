@@ -9,21 +9,35 @@ issueTrackerApp.controller('UserCtrl',
         'authorization',
         function ($scope, projectsService, notify, authentication, authorization) {
 
-            var getAllUsers = authorization.getAllUsers()
-                .then(function (allUsers) {
-                        $scope.allUsers = allUsers;
-                    }, function (err) {
-                        var serverError = err.data.error_description;
-                        notify.showError("Request failed", serverError);
-                    }
-                );
+            $scope.getAllUsers = function getAllUsers(){
+                authorization.getAllUsers()
+                    .then(function (allUsers) {
+                            $scope.allUsers = allUsers;
+                        }, function (err) {
+                            var serverError = err.data.error_description;
+                            notify.showError("Request failed", serverError);
+                        }
+                    );
+            };
 
-            var makeAdmin = authorization.makeAdmin(id)
-                .then(function (data) {
-                        notify.showInfo("User was made as admin!", data);
-                    }, function (err) {
-                        notify.showError("Request failed", err);
-                    }
-                );
+            $scope.makeAdmin = function makeAdmin(id) {
+                authorization.makeAdmin(id)
+                    .then(function (data) {
+                            notify.showInfo("User was made as admin!", data);
+                        }, function (err) {
+                            notify.showError("Request failed", err);
+                        }
+                    );
+            };
+
+            $scope.changePassword = function changePassword(user){
+                authorization.changePassword(user)
+                    .then(function (data) {
+                            notify.showInfo("Password changed!", data);
+                        }, function (err) {
+                            notify.showError("Request failed", err);
+                        }
+                    );
+            }
         }
     ]);

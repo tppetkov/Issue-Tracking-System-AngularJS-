@@ -5,7 +5,6 @@ issueTrackerApp.factory('authorization', [
         function ($http, $q, BASE_URL) {
 
             function getCurrentUser() {
-
                 var deferred = $q.defer();
                 var request = {
                     method: 'GET',
@@ -66,10 +65,30 @@ issueTrackerApp.factory('authorization', [
                 return deferred.promise;
             }
 
+            function changePassword(user) {
+
+                var deferred = $q.defer();
+                var request = {
+                    method: 'POST',
+                    url: BASE_URL + 'api/Account/ChangePassword',
+                    data : user,
+                    headers: {
+                        Authorization: "Bearer "+sessionStorage["token"]
+                    }
+                };
+                $http(request)
+                    .then(function (response) {
+                        deferred.resolve(response.data)
+                    }, function (err) {
+                        deferred.reject(err)
+                    });
+                return deferred.promise;
+            }
+
             function isLoggedUser() {
                 var sessionUser = sessionStorage['userName'];
                 return !!sessionUser;
-            };
+            }
 
             function userName() {
                 var curentUserName = sessionStorage['userName'];
@@ -85,6 +104,7 @@ issueTrackerApp.factory('authorization', [
                 getCurrentUser: getCurrentUser,
                 getAllUsers: getAllUsers,
                 makeAdmin: makeAdmin,
+                changePassword: changePassword,
                 isLoggedUser: isLoggedUser,
                 userName: userName,
                 isUserAdmin: isUserAdmin
