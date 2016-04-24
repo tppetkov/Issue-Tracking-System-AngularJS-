@@ -1,5 +1,30 @@
-<div>
-    <h1>Welcome to Issue Tracker System</h1>
-    <a href="#/login"><button>Login</button></a>
-    <a href="#/register"><button>Register</button></a>
+<h1>Affiliated projects</h1>
+<div class="row">
+    <div class="col-md-6">
+        <div class="row">
+
+            <h1>Projects</h1>
+
+        </div>
+
+        <div class="jumbotron col-md-12" ng-controller="ProjectsCtrl">
+            <ul ng-repeat="project in myProjects">
+                <li>
+                    {{project.Name}}
+                    <a href="#/projects/{{project.Id}}">
+                        <button class="btn-sm">View</button>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <a href="#/add">
+            <button class="btn-default">Add new project</button>
+        </a>
+        <pagination total-items="numItems" ng-model="projectsRequestParams.startPage"
+                    items-per-page="projectsRequestParams.pageSize" ng-change="reloadAds()"
+                    max-size="20" boundary-links="true">
+    </div>
 </div>

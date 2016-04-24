@@ -29,7 +29,7 @@ issueTrackerApp.controller('HomeCtrl', [
                     notify.showInfo("Login successful");
                     sessionStorage['token'] = loggedInUser.access_token;
                     getCurrentUserInfo();
-                    $location.path('/dashboard');
+                    $location.path('#/home');
                 }, function (err) {
                     notify.showError("Login failed!", err.statusText);
                 });
@@ -41,7 +41,7 @@ issueTrackerApp.controller('HomeCtrl', [
                     notify.showInfo("Login successful!");
                     sessionStorage['token'] = loggedInUser.access_token;
                     getCurrentUserInfo();
-                    $location.path('/dashboard');
+                    $location.path('#/home');
                 }, function (err) {
                     notify.showError("Login failed!", err.statusText);
                 });
@@ -56,6 +56,8 @@ issueTrackerApp.controller('HomeCtrl', [
             }, function(err) {
                 notify.showError("You have to login first!");
             });
-        }
+        };
+
+        $scope.userAuth = authorization;
     }
 ]);

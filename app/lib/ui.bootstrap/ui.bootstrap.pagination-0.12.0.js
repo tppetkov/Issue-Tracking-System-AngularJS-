@@ -1,7 +1,6 @@
 /*
  * angular-ui-bootstrap
  * http://angular-ui.github.io/bootstrap/
-
  * Version: 0.12.0 - 2014-11-16
  * License: MIT
  */
@@ -216,6 +215,6 @@ angular.module('ui.bootstrap.pagination', [])
 
       scope.align = angular.isDefined(attrs.align) ? scope.$parent.$eval(attrs.align) : pagerConfig.align;
       paginationCtrl.init(ngModelCtrl, pagerConfig);
-    }
-  };
+   }
+ };
 }]);

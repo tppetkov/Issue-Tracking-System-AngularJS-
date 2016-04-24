@@ -2,7 +2,8 @@
 
 var issueTrackerApp = angular.module('issueTrackerApp',
 		[
-			'ngRoute'
+			'ngRoute',
+			'ui.bootstrap.pagination'
 		])
 		.config([
 			'$routeProvider',
@@ -17,28 +18,53 @@ var issueTrackerApp = angular.module('issueTrackerApp',
 							controller: 'HomeCtrl'
 						})
 						.when('/logout', {
-							templateUrl: 'templates/logout.html'
+							templateUrl: 'templates/logout.html',
+                            data: {
+                                requireLogin: true
+                            }
 						})
-						.when('/dashboard', {
-							templateUrl: 'templates/dashboard.html',
-							controller: 'HomeCtrl'
+						.when('/home', {
+							templateUrl: 'templates/home.html',
+							controller: 'HomeCtrl',
+                            data: {
+                                requireLogin: true
+                            }
 						})
 						.when('/', {
 							controller: 'CommonCtrl',
-							templateUrl: 'templates/dashboard.html'
+							templateUrl: '/'
 						})
 						.when('/projects', {
 							templateUrl: 'templates/projects.html',
-							controller: 'ProjectsCtrl'
+							controller: 'ProjectsCtrl',
+                            data: {
+                                requireLogin: true
+                            }
 						})
 						.when('/projects/:id', {
 							templateUrl: 'templates/project-details.html',
-							controller: 'ProjectDetailCtrl'
+							controller: 'ProjectDetailCtrl',
+                            data: {
+                                requireLogin: true
+                            }
 						})
 						.when('/add', {
 							templateUrl: 'templates/add-project.html',
-							controller: 'ProjectsCtrl'
+							controller: 'ProjectsCtrl',
+                            data: {
+                                requireLogin: true
+                            }
 						})
 						.otherwise({redirectTo: '/'});
 			}])
-		.constant('BASE_URL', 'http://softuni-issue-tracker.azurewebsites.net/');
+		.constant('BASE_URL', 'http://softuni-issue-tracker.azurewebsites.net/')
+		.constant('pageSize', 10)
+        .run(function($location, $rootScope, authorization) {
+            $rootScope.$on('$routeChangeStart', function(event, next) {
+                if (next.data) {
+                    if (!authorization.isLoggedUser() && next.data.requireLogin) {
+                        $location.path('/');
+                    }
+                }
+            });
+        });

@@ -14,12 +14,16 @@
                         <button class="btn-sm">View</button>
                     </a>
                 </li>
+              
             </ul>
+             
         </div>
 
         <a href="#/add">
             <button class="btn-default">Add new project</button>
         </a>
-
+      <pagination total-items="numItems" ng-model="projectsRequestParams.startPage"
+  items-per-page="projectsRequestParams.pageSize" ng-change="reloadAds()"
+  max-size="20" boundary-links="true">
     </div>
 </div>

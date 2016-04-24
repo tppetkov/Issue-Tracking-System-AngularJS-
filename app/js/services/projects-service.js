@@ -5,12 +5,18 @@ issueTrackerApp.factory('projectsService',
         '$http',
         '$q',
         'BASE_URL',
-        function($http, $q, BASE_URL){
-            function getAllProjects(){
+        'pageSize',
+        function($http, $q, BASE_URL,pageSize){
+            var currentUrl = BASE_URL + 'projects';
+            function getAllProjects(currentPage,filter){
+                var url = currentUrl + '?pageSize=' + pageSize + "&pageNumber=" + currentPage + "&filter=";
+                if(filter){
+                    url = url + filter;
+                }
                 var deferred = $q.defer();
                 var request = {
                     method: 'GET',
-                    url: BASE_URL + 'projects',
+                    url: url,
                     headers: {
                         Authorization: "Bearer "+sessionStorage["token"]
                     }
@@ -25,7 +31,26 @@ issueTrackerApp.factory('projectsService',
                 return deferred.promise;
             }
 
-            //TODO getMyProject()
+            function getMyProjects(lead,currentPage){
+                var url = currentUrl + '?filter=Lead.Id="'+lead+'"'+ '&pageSize=' + pageSize + "&pageNumber=" + currentPage;
+
+                var deferred = $q.defer();
+                var request = {
+                    method: 'GET',
+                    url: url,
+                    headers: {
+                        Authorization: "Bearer "+sessionStorage["token"]
+                    }
+                };
+
+                $http(request)
+                    .then(function(response){
+                        deferred.resolve(response);
+                    },function(err){
+                        deferred.reject(err);
+                    });
+                return deferred.promise;
+            }
 
             function getProjectById(id){
                 var deferred = $q.defer();
@@ -102,6 +127,7 @@ issueTrackerApp.factory('projectsService',
 
             return {
                 getAllProjects : getAllProjects,
+                getMyProjects: getMyProjects,
                 getProjectById : getProjectById,
                 addProject : addProject,
                 editProject: editProject

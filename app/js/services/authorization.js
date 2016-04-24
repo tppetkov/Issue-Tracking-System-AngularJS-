@@ -66,10 +66,28 @@ issueTrackerApp.factory('authorization', [
                 return deferred.promise;
             }
 
+            function isLoggedUser() {
+                var sessionUser = sessionStorage['userName'];
+                return !!sessionUser;
+            };
+
+            function userName() {
+                var curentUserName = sessionStorage['userName'];
+                return curentUserName;
+            }
+
+            function isUserAdmin() {
+                var isUserAdmin=sessionStorage['isAdmin'];
+                return isUserAdmin;
+            }
+
             return {
                 getCurrentUser: getCurrentUser,
                 getAllUsers: getAllUsers,
-                makeAdmin: makeAdmin
+                makeAdmin: makeAdmin,
+                isLoggedUser: isLoggedUser,
+                userName: userName,
+                isUserAdmin: isUserAdmin
             }
         }
     ]);
