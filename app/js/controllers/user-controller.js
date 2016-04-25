@@ -33,6 +33,7 @@ issueTrackerApp.controller('UserCtrl',
             $scope.changePassword = function changePassword(user){
                 authorization.changePassword(user)
                     .then(function (data) {
+                        console.log(data);
                             notify.showInfo("Password changed!", data);
                         }, function (err) {
                             notify.showError("Request failed", err);
