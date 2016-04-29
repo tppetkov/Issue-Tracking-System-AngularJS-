@@ -44,7 +44,7 @@
                     <h2>Issues</h2>
                     <ul ng-repeat="issue in myIssues">
                         <li>
-                            {{issue.Name}}
+                            {{issue.Title}}  {{issue.Project.Name}}
                             <a href="#/issue/{{issue.Id}}">
                                 <button class="btn-sm">View</button>
                             </a>

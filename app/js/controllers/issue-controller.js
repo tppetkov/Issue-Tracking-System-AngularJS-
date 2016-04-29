@@ -19,6 +19,7 @@ issueTrackerApp.controller('IssuesCtrl',
             issuesService.getMyIssues($scope.currentPage)
                 .then(function (issues) {
                         $scope.myIssues = issues.data.Issues;
+                    console.log($scope.myIssues);
                     }, function (err) {
                         var serverError = err.statusText;
                         notify.showError("Request failed", serverError);
