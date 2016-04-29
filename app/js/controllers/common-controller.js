@@ -13,5 +13,15 @@ issueTrackerApp.controller('CommonCtrl', [
                 Id :  sessionStorage.userId,
                 isAdmin :  sessionStorage.isAdmin
             };
+
+            $scope.showContainer = function(tab){
+                if(tab == 'projects'){
+                    $scope.myProjects = true;
+                    $scope.myIssues = false
+                } else {
+                    $scope.myProjects = false;
+                    $scope.myIssues = true
+                }
+            };
         }
     ]);

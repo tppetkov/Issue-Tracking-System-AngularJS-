@@ -46,7 +46,7 @@ issueTrackerApp.controller('ProjectsCtrl',
                         notify.showError("Edit project failed", err.statusText);
                     });
             };
-                   $scope.currentPage = 1;
+            $scope.currentPage = 1;
             $scope.projectsRequestParams = {
                 startPage: 1,
                 pageSize: 1
@@ -68,9 +68,6 @@ issueTrackerApp.controller('ProjectsCtrl',
                 .then(function (myProjects) {
                     $scope.myProjects = myProjects.data.Projects;
                     $scope.numItems  = myProjects.data.TotalPages;
-                    console.log(sessionStorage['userId']);
-                    console.log($scope.numItems);
-                    console.log($scope.myProjects);
                 },
                 function (err) {
                     var serverError = err.data.error_description;

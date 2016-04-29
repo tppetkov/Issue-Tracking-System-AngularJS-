@@ -33,7 +33,6 @@ issueTrackerApp.factory('projectsService',
 
             function getMyProjects(lead,currentPage){
                 var url = currentUrl + '?filter=Lead.Id="'+lead+'"'+ '&pageSize=' + pageSize + "&pageNumber=" + currentPage;
-
                 var deferred = $q.defer();
                 var request = {
                     method: 'GET',
