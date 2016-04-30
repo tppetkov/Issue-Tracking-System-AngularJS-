@@ -25,5 +25,7 @@ issueTrackerApp.controller('IssuesCtrl',
                         notify.showError("Request failed", serverError);
                     }
                 );
+
+            issuesService.getIssueById(id)
         }
     ]);
