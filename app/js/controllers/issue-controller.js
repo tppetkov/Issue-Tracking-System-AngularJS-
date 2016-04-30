@@ -26,7 +26,7 @@ issueTrackerApp.controller('IssuesCtrl',
                     }
                 );
 
-            issuesService.getIssueById($scope.issueId)
+            issuesService.getIssuesByProjectId($scope.issueId)
                 .then(function (issues){
                     $scope.issuesById=issues.data.Issues;
                         console.log($scope.issuesById);
