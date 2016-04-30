@@ -85,7 +85,6 @@ issueTrackerApp.factory('issuesService',
             }
 
             function getMyIssues(currentPage){
-                console.log(currentPage);
                 var url = currentUrl + '/me?orderBy=Project.Name desc, IssueKey&pageSize=' +
                     pageSize + '&pageNumber=' + currentPage;
                 var deferred = $q.defer();

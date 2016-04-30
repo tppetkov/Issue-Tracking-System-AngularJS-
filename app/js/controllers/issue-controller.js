@@ -11,6 +11,7 @@ issueTrackerApp.controller('IssuesCtrl',
         function($scope,$location,issuesService,notify,authorization,$routeParams){
 
             $scope.currentPage = 1;
+            $scope.issueId=$routeParams.id;
             $scope.projectsRequestParams = {
                 startPage: 1,
                 pageSize: 1
@@ -19,13 +20,24 @@ issueTrackerApp.controller('IssuesCtrl',
             issuesService.getMyIssues($scope.currentPage)
                 .then(function (issues) {
                         $scope.myIssues = issues.data.Issues;
-                    console.log($scope.myIssues);
                     }, function (err) {
                         var serverError = err.statusText;
                         notify.showError("Request failed", serverError);
                     }
                 );
 
-            issuesService.getIssueById(id)
+            issuesService.getIssueById($scope.issueId)
+                .then(function (issues){
+                    $scope.issuesById=issues.data.Issues;
+                        console.log($scope.issuesById);
+                    }, function (err) {
+                        var serverError = err.statusText;
+                        notify.showError("Request failed", serverError);
+                    }
+                );
+
+            $scope.show = function () {
+                $scope.showIssues = !$scope.showIssues;
+            };
         }
     ]);
