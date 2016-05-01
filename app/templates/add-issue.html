@@ -1,10 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<form name="addIssueForm">
 
-</body>
-</html>
+    <div class="form-group">
+
+        <label for="addIssueTitle">Title</label>
+        <input type="text"
+               class="form-control"
+               id="addIssueTitle"
+               placeholder="Title"
+               required="required"
+               ng-model="issue.Title">
+
+        <label for="addIssueDescription">Description</label>
+                <textarea row="5"
+                          class="form-control"
+                          id="addIssueDescription"
+                          placeholder="Description"
+                          required="required"
+                          ng-model="issue.Description">
+                </textarea>
+
+
+        <label for="addIssueDate">Due date</label>
+        <input type="text"
+               class="form-control"
+               id="addIssueDate"
+               placeholder="mm/dd/yyyy"
+               required="required"
+               ng-model="issue.DueDate">
+
+
+        <br/>
+        <label for="priorityId"> Priority: </label><br>
+        <select ng-model="issue.PriorityId" required="required" id="priorityId" ng-controller="ProjectDetailCtrl">
+            <option ng-repeat="priority in priorities | orderBy:'Name'" value="{{priority.Id}}">{{priority.Name}}</option>
+        </select>
+
+
+        <br/>
+        <br/>
+        <div class="searchBox" ng-controller="CommonCtrl">
+            <label for="searchName"> Get name of user from Assignee input </label><br>
+            <input type="text" ng-model="val" id="searchName" placeholder="Name of user">
+            <button ng-click="getAllUsers(val)"> search by name</button>
+
+            <label for="addAssigneeId"> Assignee: </label><br>
+            <select ng-model="issue.AssigneeId" required="required" id="addAssigneeId" >
+                <option ng-repeat="user in allUsers | orderBy:'Username'" value="{{user.Id}}">{{user.Username}}</option>
+            </select>
+        </div>
+
+        <br/>
+        <label for="addLabel"> Label </label><br>
+        <input ng-model="issue.Labels" name="namesInput"  ng-list id="addLabel">
+
+
+        <br/>
+        <button type="submit" class="btn btn-primary pull-right"
+                ng-disabled="addIssueForm.$invalid"
+                ng-click="addIssue(issue)">Add issue
+        </button>
+    </div>
+</form>
