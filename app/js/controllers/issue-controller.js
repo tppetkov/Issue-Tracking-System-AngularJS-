@@ -28,8 +28,8 @@ issueTrackerApp.controller('IssuesCtrl',
 
             issuesService.getIssuesByProjectId($scope.issueId)
                 .then(function (issues){
-                    $scope.issuesById=issues.data.Issues;
-                        console.log($scope.issuesById);
+                    $scope.issuesById=issues.data;
+                        console.log(issues);
                     }, function (err) {
                         var serverError = err.statusText;
                         notify.showError("Request failed", serverError);
