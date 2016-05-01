@@ -8,6 +8,7 @@ issueTrackerApp.factory('issuesService',
         'pageSize',
         function ($http, $q, BASE_URL, pageSize) {
             var currentUrl=BASE_URL + 'Issues';
+
             function getIssuesByProjectId(id) {
                 var deferred = $q.defer();
                 var request = {

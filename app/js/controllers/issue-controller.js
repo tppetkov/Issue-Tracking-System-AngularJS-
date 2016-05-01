@@ -36,6 +36,16 @@ issueTrackerApp.controller('IssuesCtrl',
                     }
                 );
 
+            $scope.addIssue = function(issue){
+                issuesService.addIssue(issue)
+                    .then(function () {
+                        notify.showInfo("Issue added successful!");
+                        $location.path('/projects/$scope.issueId');
+                    }, function (err) {
+                        notify.showError("Add issue failed", err.statusText);
+                    });
+            };
+
             $scope.show = function () {
                 $scope.showIssues = !$scope.showIssues;
             };

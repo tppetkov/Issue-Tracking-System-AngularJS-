@@ -30,10 +30,14 @@
 
 
         <br/>
-        <label for="priorityId"> Priority: </label><br>
-        <select ng-model="issue.PriorityId" required="required" id="priorityId" ng-controller="ProjectDetailCtrl">
-            <option ng-repeat="priority in priorities | orderBy:'Name'" value="{{priority.Id}}">{{priority.Name}}</option>
-        </select>
+        <label for="addIssuePriority"> Priority: </label><br>
+            <input type="text"
+                   class="form-control"
+                   id="addIssuePriority"
+                   placeholder="Priority"
+                   required="required"
+                   ng-model="issue.PriorityId" ></input>
+
 
 
         <br/>
@@ -43,10 +47,6 @@
             <input type="text" ng-model="val" id="searchName" placeholder="Name of user">
             <button ng-click="getAllUsers(val)"> search by name</button>
 
-            <label for="addAssigneeId"> Assignee: </label><br>
-            <select ng-model="issue.AssigneeId" required="required" id="addAssigneeId" >
-                <option ng-repeat="user in allUsers | orderBy:'Username'" value="{{user.Id}}">{{user.Username}}</option>
-            </select>
         </div>
 
         <br/>
