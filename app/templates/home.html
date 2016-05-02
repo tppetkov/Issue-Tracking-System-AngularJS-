@@ -28,14 +28,15 @@
                             </a>
                         </li>
                     </ul>
-                </div>
-            <a href="#/add">
-                <button class="btn-default">Add new project</button>
-            </a>
+                    <a href="#/add">
+                        <button class="btn-default">Add new project</button>
+                    </a>
+
             <pagination total-items="numItems" ng-model="projectsRequestParams.startPage"
                         items-per-page="projectsRequestParams.pageSize"
                         max-size="20" boundary-links="true">
                  </div>
+            </div>
 
             <!-- Issues container -->
 
@@ -50,13 +51,10 @@
                             </a>
                         </li>
                     </ul>
-                </div>
-                <a href="#/add">
-                    <button class="btn-default">Add new project</button>
-                </a>
                 <pagination total-items="numItems" ng-model="projectsRequestParams.startPage"
                             items-per-page="projectsRequestParams.pageSize"
                             max-size="20" boundary-links="true">
+                </div>
             </div>
         </div>
     </div>
