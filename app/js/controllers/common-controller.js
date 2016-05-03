@@ -41,7 +41,5 @@ issueTrackerApp.controller('CommonCtrl', [
                         }
                     );
             };
-
-            console.log($scope.getAllUsers)
         }
     ]);
