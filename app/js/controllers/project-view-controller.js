@@ -25,6 +25,8 @@ issueTrackerApp.controller('ProjectViewCtrl',
                     );
             };
 
+            $scope.userAuth = authorization;
+
             if (isNaN($routeParams.id)) {
                 $location.path('/projects');
             } else {

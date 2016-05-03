@@ -31,10 +31,9 @@
                     <a href="#/add">
                         <button class="btn-default">Add new project</button>
                     </a>
-
             <pagination total-items="numItems" ng-model="projectsRequestParams.startPage"
                         items-per-page="projectsRequestParams.pageSize"
-                        max-size="20" boundary-links="true">
+                        max-size="5" boundary-links="true">
                  </div>
             </div>
 
@@ -51,9 +50,9 @@
                             </a>
                         </li>
                     </ul>
-                <pagination total-items="numItems" ng-model="projectsRequestParams.startPage"
-                            items-per-page="projectsRequestParams.pageSize"
-                            max-size="20" boundary-links="true">
+                <pagination total-items="numItems" ng-model="issuesRequestParams.startPage"
+                            items-per-page="issuesRequestParams.pageSize"
+                            max-size="5" boundary-links="true">
                 </div>
             </div>
         </div>
