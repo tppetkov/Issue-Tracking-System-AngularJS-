@@ -10,13 +10,14 @@ issueTrackerApp.controller('IssuesCtrl',
         '$routeParams',
         function($scope,$location,issuesService,notify,authorization,$routeParams){
 
+            $scope.userAuth = authorization;
             $scope.currentPage = 1;
             $scope.issueId=$routeParams.id;
             $scope.projectsRequestParams = {
                 startPage: 1,
                 pageSize: 1
             };
-
+            console.log($scope.userAuth.getAllUsers().data);
             issuesService.getMyIssues($scope.currentPage)
                 .then(function (issues) {
                         $scope.myIssues = issues.data.Issues;

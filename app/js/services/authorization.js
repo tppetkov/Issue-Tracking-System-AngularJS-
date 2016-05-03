@@ -25,21 +25,24 @@ issueTrackerApp.factory('authorization', [
             }
 
             function getAllUsers() {
-                var deferred = $q.defer();
-                var request = {
-                    method: 'GET',
-                    url: BASE_URL + 'Users/',
-                    headers: {
-                        Authorization: "Bearer "+sessionStorage["token"]
-                    }
-                };
-                $http(request)
-                    .then(function (response) {
-                        deferred.resolve(response.data)
-                    }, function (err) {
-                        deferred.reject(err)
-                    });
-                return deferred.promise;
+                {
+                    var deferred = $q.defer();
+                    var request = {
+                        method: 'GET',
+                        url: BASE_URL + 'Users/',
+                        headers: {
+                            Authorization: "Bearer "+sessionStorage["token"]
+                        }
+                    };
+                    $http(request)
+                        .then(function (response) {
+                            deferred.resolve(response.data);
+                            var users = response.data;
+                        }, function (err) {
+                            deferred.reject(err)
+                        });
+                    return deferred.promise;
+                }
             }
 
             function makeAdmin(id) {
