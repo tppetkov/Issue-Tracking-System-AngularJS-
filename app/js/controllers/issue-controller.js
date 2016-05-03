@@ -41,13 +41,12 @@ issueTrackerApp.controller('IssuesCtrl',
                 issuesService.addIssue(issue)
                     .then(function () {
                         notify.showInfo("Issue added successful!");
-                        $location.path('/projects/$scope.issueId');
                     }, function (err) {
                         notify.showError("Add issue failed", err.statusText);
                     });
             };
 
-            projectsService.getProjectById($routeParams.id)
+            projectsService.getProjectById($scope.issueId)
                 .then(function success(data) {
                     console.log(data.data.Priorities);
                     $scope.projectPriorities = data.data.Priorities;
