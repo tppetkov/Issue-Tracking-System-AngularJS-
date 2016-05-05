@@ -37,13 +37,21 @@ issueTrackerApp.controller('IssuesCtrl',
                     }
                 );
 
-            $scope.addIssue = function(issue){
-                issuesService.addIssue(issue)
-                    .then(function () {
-                        notify.showInfo("Issue added successful!");
-                    }, function (err) {
-                        notify.showError("Add issue failed", err.statusText);
-                    });
+            $scope.addIssue = function addIssue(issueToAdd) {
+                var issueToSend = {
+                    Title: issueToAdd.Title,
+                    Description: issueToAdd.Description,
+                    DueDate: issueToAdd.DueDate,
+                    ProjectId: $routeParams.id,
+                    AssigneeId: issueToAdd.AssigneeId,
+                    PriorityId: issueToAdd.PriorityId
+                };
+                issuesService.addIssue(issueToSend)
+                    .then(function success() {
+                        notify.showInfo("Issue successful added!");
+                    }, function error(err) {
+                        notify.showError("Add failed!", err.statusText);
+                    })
             };
 
             projectsService.getProjectById($scope.issueId)
