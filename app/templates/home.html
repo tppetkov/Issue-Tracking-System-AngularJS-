@@ -28,7 +28,7 @@
                             </a>
                         </li>
                     </ul>
-                    <a href="#/add">
+                    <a href="#/add" ng-if="userAuth.isUserAdmin()">
                         <button class="btn-default">Add new project</button>
                     </a>
             <pagination total-items="numItems" ng-model="projectsRequestParams.startPage"

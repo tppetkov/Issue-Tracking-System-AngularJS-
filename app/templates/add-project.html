@@ -1,8 +1,7 @@
-<div class="page-header">
-            <h1>Add New Project</h1>
-        </div>
+ <h1 class="page-header">Add New Project</h1>
+    <div class="jumbotron container">
         <form name="addProjectForm">
-
+            <div class="form-group">
                 <label for="addProjectName">Name</label>
                 <input type="text"
                        class="form-control"
@@ -10,20 +9,23 @@
                        placeholder="Name"
                        required="required"
                        ng-model="object.Name" />
-
+            </div>
+            <div class="form-group">
                 <label for="addProjectDescription">Description</label>
                 <input class="form-control"
                        id="addProjectDescription"
                        placeholder="Description"
                        required="required"
                        ng-model="object.Description" />
-
+            </div>
+            <div class="form-group">
                 <label for="addProjectKey">ProjectKey</label>
                 <input type="text"
                        class="form-control"
                        id="addProjectKey"
                        ng-model="object.ProjectKey" />
-
+            </div>
+            <div class="form-group">
             <label for="addProjectPriorities"> Priorities multiple select: </label><br>
             <select name="priorities"
                     id="addProjectPriorities"
@@ -34,14 +36,14 @@
                 <option value="High">High</option>
                 <option value="Urgent">Urgent</option>
             </select>
-
-            <!--Custom directive for add and edit form footer -->
+            </div>
+            <div class="form-group">
             <label for="addId"> Lead of project: </label><br>
             <select ng-model="object.LeadId" id="addId">
                 <option ng-repeat="user in allUsers | orderBy:'Username'" value="{{user.Id}}">{{user.Username}}</option>
             </select>
-
-            <br/>
+            </div>
+            <div class="form-group">
             <label for="addLabel"> Label </label><br>
             <input ng-model="object.labels" required="required" name="namesInput"  ng-list id="addLabel">
                 <br/>
@@ -49,6 +51,6 @@
                         ng-disabled="addProjectForm.$invalid"
                         ng-click="addProject(object)">Add project
                 </button>
+            </div>
         </form>
     </div>
-</div>

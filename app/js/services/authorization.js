@@ -103,9 +103,9 @@ issueTrackerApp.factory('authorization', [
                 return isUserAdmin;
             }
 
-            function isUserLead() {
-                var isUserLead=sessionStorage['userId'];
-                return isUserLead;
+            function getUserId() {
+                var getUserId=sessionStorage['userId'];
+                return getUserId;
             }
 
             return {
@@ -116,7 +116,7 @@ issueTrackerApp.factory('authorization', [
                 isLoggedUser: isLoggedUser,
                 userName: userName,
                 isUserAdmin: isUserAdmin,
-                isUserLead: isUserLead
+                getUserId: getUserId
             }
         }
     ]);

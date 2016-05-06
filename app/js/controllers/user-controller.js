@@ -39,6 +39,8 @@ issueTrackerApp.controller('UserCtrl',
                             notify.showError("Request failed", err);
                         }
                     );
-            }
+            };
+
+            $scope.userAuth = authorization;
         }
     ]);
