@@ -6,12 +6,12 @@ issueTrackerApp.controller('ProjectsCtrl',
         '$location',
         'projectsService',
         'notify',
+        '$routeParams',
         'authorization',
-        function($scope,$location,projectsService,notify,authorization){
+        function($scope,$location,projectsService,notify,$routeParams,authorization){
 
 
             var convertData = function (project){
-                console.log(project.label);
                 project.labels = toObject(project.labels);
                 project.priorities = toObject(project.priorities);
 
@@ -38,7 +38,7 @@ issueTrackerApp.controller('ProjectsCtrl',
 
             $scope.editProject = function (project) {
                 project = convertData(project);
-                projectsService.editProject(project)
+                projectsService.editProject(project,$routeParams.id)
                     .then(function () {
                         notify.showInfo("Project edited successful");
                         $location.path('/projects');
@@ -55,8 +55,6 @@ issueTrackerApp.controller('ProjectsCtrl',
                 .then(function (allProjects) {
                         $scope.allProjects = allProjects.data.Projects;
                         $scope.numItems  = allProjects.data.TotalPages;
-                        console.log($scope.numItems);
-                        console.log($scope.allProjects);
                     },
                     function (err) {
                         var serverError = err.data.error_description;
@@ -82,6 +80,7 @@ issueTrackerApp.controller('ProjectsCtrl',
                         notify.showError("Request failed", serverError);
                     }
                 );
+            $scope.userAuth = authorization;
         }
     ]);
 

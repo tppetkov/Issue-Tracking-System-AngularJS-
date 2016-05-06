@@ -21,7 +21,6 @@ issueTrackerApp.factory('projectsService',
                         Authorization: "Bearer "+sessionStorage["token"]
                     }
                 };
-
                 $http(request)
                     .then(function(response){
                         deferred.resolve(response);
@@ -32,7 +31,9 @@ issueTrackerApp.factory('projectsService',
             }
 
             function getMyProjects(lead,currentPage){
-                var url = currentUrl + '?filter=Lead.Id="'+lead+'"'+ '&pageSize=' + pageSize + "&pageNumber=" + currentPage;
+                var url = currentUrl + '?filter=Lead.Id="'+ lead+'"'+
+                    '&pageSize=' + pageSize +
+                    "&pageNumber=" + currentPage;
                 var deferred = $q.defer();
                 var request = {
                     method: 'GET',
@@ -41,7 +42,6 @@ issueTrackerApp.factory('projectsService',
                         Authorization: "Bearer "+sessionStorage["token"]
                     }
                 };
-
                 $http(request)
                     .then(function(response){
                         deferred.resolve(response);
@@ -60,7 +60,6 @@ issueTrackerApp.factory('projectsService',
                         Authorization: "Bearer "+sessionStorage["token"]
                     }
                 };
-
                 $http(request)
                     .then(function(response){
                         deferred.resolve(response);
@@ -72,7 +71,6 @@ issueTrackerApp.factory('projectsService',
 
             function addProject(project){
                 var deferred = $q.defer();
-
                 var request = {
                     method: 'POST',
                     url: BASE_URL + 'projects',
@@ -88,7 +86,6 @@ issueTrackerApp.factory('projectsService',
                         Authorization: "Bearer "+sessionStorage["token"]
                     }
                 };
-
                 $http(request)
                     .then(function(response){
                         deferred.resolve(response);
@@ -98,11 +95,11 @@ issueTrackerApp.factory('projectsService',
                 return deferred.promise;
             }
 
-            function editProject(project){
+            function editProject(project,id){
                 var deferred = $q.defer();
                 var request = {
                     method: 'PUT',
-                    url: BASE_URL + 'projects/'+ project.Id,
+                    url: BASE_URL + 'projects/'+ id,
                     data : {
                         'Name' : project.Name,
                         'Description' : project.Description,
@@ -114,7 +111,6 @@ issueTrackerApp.factory('projectsService',
                         Authorization: "Bearer "+sessionStorage["token"]
                     }
                 };
-
                 $http(request)
                     .then(function(response){
                         deferred.resolve(response);

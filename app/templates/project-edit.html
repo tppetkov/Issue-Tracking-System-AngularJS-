@@ -1,0 +1,49 @@
+<h1 class="page-header">Edit Project</h1>
+<div class="jumbotron container">
+    <form name="editProjectForm">
+        <div class="form-group">
+            <label for="editProjectName">Name</label>
+            <input type="text"
+                   class="form-control"
+                   id="editProjectName"
+                   placeholder="Name"
+                   required="required"
+                   ng-model="object.Name" />
+        </div>
+        <div class="form-group">
+            <label for="editProjectDescription">Description</label>
+            <input class="form-control"
+                   id="editProjectDescription"
+                   placeholder="Description"
+                   required="required"
+                   ng-model="object.Description" />
+        </div>
+        <div class="form-group">
+            <label for="editProjectPriorities"> Priorities multiple select: </label><br>
+            <select name="priorities"
+                    id="editProjectPriorities"
+                    required="required"
+                    ng-model="object.priorities" multiple>
+                <option value="Low">Low</option>
+                <option value="Normal">Normal</option>
+                <option value="High">High</option>
+                <option value="Urgent">Urgent</option>
+            </select>
+        </div>
+        <div class="form-group" ng-if="userAuth.isUserAdmin()">
+            <label for="editId"> Lead of project: </label><br>
+            <select ng-model="object.LeadId" id="editId">
+                <option ng-repeat="user in allUsers | orderBy:'Username'" value="{{user.Id}}">{{user.Username}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="editLabel"> Label </label><br>
+            <input ng-model="object.labels" required="required" name="namesInput"  ng-list id="editLabel">
+            <br/>
+            <button type="submit" class="btn btn-primary pull-right"
+                    ng-disabled="editProjectForm.$invalid"
+                    ng-click="editProject(object)">Edit project
+            </button>
+        </div>
+    </form>
+</div>
