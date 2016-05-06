@@ -14,14 +14,24 @@
     <div class="form-group" ng-show="myProjects">
         <div class="jumbotron container" ng-controller="ProjectsCtrl">
             <h2>Projects</h2>
-            <ul ng-repeat="project in myProjects">
-                <li>
-                    {{project.Name}}
-                    <a href="#/projects/{{project.Id}}">
-                        <button class="btn-sm">View</button>
-                    </a>
-                </li>
-            </ul>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Lead</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="project in myProjects">
+                    <td><a href="#projects/{{project.Id}}">{{project.Id}}</a></td>
+                    <td>{{project.Name}}</td>
+                    <td>{{project.Description}}</td>
+                    <td>{{project.Lead.Username}}</td>
+                </tr>
+                </tbody>
+            </table>
             <a href="#/add">
                 <button class="btn-default" ng-if="userAuth.isUserAdmin()">Add new project</button>
             </a><pagination total-items="numItems" ng-model="projectsRequestParams.startPage"
@@ -34,14 +44,24 @@
     <div class="form-group" ng-show="myIssues">
         <div class="jumbotron container" ng-controller="IssuesCtrl">
             <h2>Issues</h2>
-            <ul ng-repeat="issue in myIssues">
-                <li>
-                    {{issue.Title}}  {{issue.Project.Name}}
-                    <a href="#/issue/{{issue.Id}}">
-                        <button class="btn-sm">View</button>
-                    </a>
-                </li>
-            </ul>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>DueDate</th>
+                    <th>Assignee</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="issue in myIssues">
+                    <td><a href="#issues/{{issue.Id}}">{{issue.Title}}</a></td>
+                    <td>{{issue.Description}}</td>
+                    <td>{{issue.DueDate}}</td>
+                    <td>{{issue.Assignee.Username}}</td>
+                </tr>
+                </tbody>
+            </table>
             <pagination total-items="numItems" ng-model="issuesRequestParams.startPage"
                         items-per-page="issuesRequestParams.pageSize"
                         max-size="5" boundary-links="true">

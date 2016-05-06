@@ -44,6 +44,7 @@ issueTrackerApp.factory('projectsService',
                 };
                 $http(request)
                     .then(function(response){
+                        console.log(response);
                         deferred.resolve(response);
                     },function(err){
                         deferred.reject(err);
