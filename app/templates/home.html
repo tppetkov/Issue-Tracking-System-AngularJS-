@@ -1,60 +1,50 @@
 <div ng-controller="CommonCtrl">
-    <h1>Affiliated projects/ Issues</h1>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="row">
-                <a ng-click="showContainer('projects')" aria-expanded="false" data-toggle="tab">
-                    <button class="btn-sm">
-                        Projects
-                    </button>
-                </a>
-                <a ng-click="showContainer('issues')" aria-expanded="false" data-toggle="tab">
-                    <button class="btn-sm">
-                        Issues
-                    </button>
-                </a>
-            </div>
-
-            <!--Projects container -->
-
-            <div ng-controller="CommonCtrl" ng-show="myProjects">
-                <div class="jumbotron col-md-12" ng-controller="ProjectsCtrl">
-                    <h2>Projects</h2>
-                    <ul ng-repeat="project in myProjects">
-                        <li>
-                            {{project.Name}}
-                            <a href="#/projects/{{project.Id}}">
-                                <button class="btn-sm">View</button>
-                            </a>
-                        </li>
-                    </ul>
-                    <a href="#/add" ng-if="userAuth.isUserAdmin()">
-                        <button class="btn-default">Add new project</button>
+    <h1 class="page-header">Affiliated projects/ Issues</h1>
+    <a ng-click="showContainer('projects')" aria-expanded="false" data-toggle="tab">
+        <button class="btn-lg">
+            Projects
+        </button>
+    </a>
+    <a ng-click="showContainer('issues')" aria-expanded="false" data-toggle="tab">
+        <button class="btn-lg">
+            Issues
+        </button>
+    </a>
+    <!-- Projects container -->
+    <div class="form-group" ng-show="myProjects">
+        <div class="jumbotron container" ng-controller="ProjectsCtrl">
+            <h2>Projects</h2>
+            <ul ng-repeat="project in myProjects">
+                <li>
+                    {{project.Name}}
+                    <a href="#/projects/{{project.Id}}">
+                        <button class="btn-sm">View</button>
                     </a>
-            <pagination total-items="numItems" ng-model="projectsRequestParams.startPage"
-                        items-per-page="projectsRequestParams.pageSize"
-                        max-size="5" boundary-links="true">
-                 </div>
-            </div>
-
-            <!-- Issues container -->
-
-            <div ng-controller="CommonCtrl" ng-show="myIssues">
-                <div class="jumbotron col-md-12" ng-controller="IssuesCtrl">
-                    <h2>Issues</h2>
-                    <ul ng-repeat="issue in myIssues">
-                        <li>
-                            {{issue.Title}}  {{issue.Project.Name}}
-                            <a href="#/issue/{{issue.Id}}">
-                                <button class="btn-sm">View</button>
-                            </a>
-                        </li>
-                    </ul>
-                <pagination total-items="numItems" ng-model="issuesRequestParams.startPage"
-                            items-per-page="issuesRequestParams.pageSize"
+                </li>
+            </ul>
+            <a href="#/add">
+                <button class="btn-default" ng-if="userAuth.isUserAdmin()">Add new project</button>
+            </a><pagination total-items="numItems" ng-model="projectsRequestParams.startPage"
+                            items-per-page="projectsRequestParams.pageSize"
                             max-size="5" boundary-links="true">
-                </div>
-            </div>
+        </div>
+    </div>
+
+    <!-- Issues container -->
+    <div class="form-group" ng-show="myIssues">
+        <div class="jumbotron container" ng-controller="IssuesCtrl">
+            <h2>Issues</h2>
+            <ul ng-repeat="issue in myIssues">
+                <li>
+                    {{issue.Title}}  {{issue.Project.Name}}
+                    <a href="#/issue/{{issue.Id}}">
+                        <button class="btn-sm">View</button>
+                    </a>
+                </li>
+            </ul>
+            <pagination total-items="numItems" ng-model="issuesRequestParams.startPage"
+                        items-per-page="issuesRequestParams.pageSize"
+                        max-size="5" boundary-links="true">
         </div>
     </div>
 </div>

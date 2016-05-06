@@ -27,18 +27,26 @@
                     <div class='col-lg-2'>
                         <a class="navbar-brand" href="#/logout">Logout</a>
                     </div>
-                    <div class='col-lg-3' ng-controller="HomeCtrl">
+                    <div class='col-lg-4' ng-controller="HomeCtrl">
                         <p class="navbar navbar-text centered">
                             <strong>User:</strong> {{userAuth.userName()}}
                         </p>
                     </div>
                 </div>
                 <div ng-if="!userAuth.isLoggedUser()">
-                    <h1>Welcome ot Issue Tracker System!</h1>
+                    <h1 class="page-header">Welcome ot Issue Tracker System!</h1>
                     <p>Please login or register to continue..</p>
                     <div>
-                        <a href="#/login"><button class="navbar-btn">Login</button></a>
-                        <a href="#/register"><button class="navbar-btn">Register</button></a>
+                        <a href="#/login">
+                            <button class="btn-sm">
+                                Login
+                            </button>
+                        </a>
+                        <a href="#/register">
+                            <button class="btn-sm">
+                                Register
+                            </button>
+                        </a>
                     </div>
                 </div>
 
@@ -49,9 +57,7 @@
     </div>
 
 <div class="footer centered">
-    <div class="container">
-        <p class="credit">2016 AngularJS Practical Project - <a href="http://softuni.bg">Software University </a></p>
-    </div>
+    <p class="credit">2016 AngularJS Practical Project - <a href="http://softuni.bg">Software University </a></p>
 </div>
 
 <script src="lib/angular/angular.js"></script>

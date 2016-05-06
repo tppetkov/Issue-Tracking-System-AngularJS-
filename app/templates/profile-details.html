@@ -2,43 +2,41 @@
 <p>Username: {{userAuth.userName()}}</p>
 <p>User ID: {{userAuth.getUserId()}}</p>
 <p>Admin: {{userAuth.isUserAdmin()}}</p>
-
-<div class="col-md-4 col-md-offset-1 border">
+<a ng-click="showContainer()">
+    <button class="btn-lg">
+        Change Password
+    </button>
+</a>
+<div class="form-group" ng-show="changePassword">
     <form name="changeUserPassForm">
-        <div class="form-group">
-            <label for="oldPassword" class="text-center">Old password</label>
-            <input type="password"
-                   required=required
-                   min-length="6"
-                   max-length="100"
-                   class="form-control"
-                   id="oldPassword"
-                   placeholder="Old Password"
-                   ng-model="user.oldPassword">
-            <label for="newPassword" class="text-center">New password</label>
-            <input type="password"
-                   required=required
-                   min-length="3"
-                   max-length="100"
-                   class="form-control"
-                   id="newPassword"
-                   placeholder="Password"
-                   ng-model="user.newPassword">
-
-            <label for="repeatNewPassword" class="text-center">Confirm password</label>
-            <input type="password"
-                   required=required
-                   min-length="3"
-                   max-length="100"
-                   class="form-control"
-                   id="repeatNewPassword"
-                   placeholder="Repeat Passowrd"
-                   ng-model="user.confirmPassword">
-        </div>
-        <br />
-        <button type="submit"
-                class="btn btn-primary pull-right"
-                ng-disabled="changeUserPassForm.$invalid"
-                ng-click="changePassword(user)">Change Password</button>
+        <label for="oldPassword" class="text-center">Old password</label>
+        <input type="password"
+               required=required
+               min-length="6"
+               max-length="100"
+               class="form-control"
+               id="oldPassword"
+               placeholder="Old Password"
+               ng-model="user.oldPassword" />
+        <label for="newPassword" class="text-center">New password</label>
+        <input type="password"
+               required=required
+               min-length="3"
+               max-length="100"
+               class="form-control"
+               id="newPassword"
+               placeholder="Password"
+               ng-model="user.newPassword" />
+        <label for="repeatNewPassword" class="text-center">Confirm password</label>
+        <input type="password"
+               required=required
+               min-length="3"
+               max-length="100"
+               class="form-control"
+               id="repeatNewPassword"
+               placeholder="Repeat Passowrd"
+               ng-model="user.confirmPassword" />
+        <button type="submit" class="btn btn-primary pull-right" ng-disabled="changeUserPassForm.$invalid" ng-click="changePassword(user)">Change Password
+        </button>
     </form>
 </div>

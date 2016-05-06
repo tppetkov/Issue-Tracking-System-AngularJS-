@@ -42,5 +42,9 @@ issueTrackerApp.controller('UserCtrl',
             };
 
             $scope.userAuth = authorization;
+
+            $scope.showContainer = function(){
+                $scope.changePassword = !$scope.changePassword;
+            };
         }
     ]);

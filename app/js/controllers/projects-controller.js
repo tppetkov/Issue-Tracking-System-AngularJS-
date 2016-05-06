@@ -22,7 +22,7 @@ issueTrackerApp.controller('ProjectsCtrl',
                         outputArrayAsJson.push({'Name': inputArray[i]});
                     return outputArrayAsJson;
                 }
-                return project
+                return project;
             };
 
             $scope.addProject = function (project) {

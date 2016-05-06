@@ -6,9 +6,9 @@ issueTrackerApp.factory('notify',
                 showInfo: function(msg) {
                     noty({
                         text: msg,
-                        type: 'info',
+                        type: 'success',
                         layout: 'topCenter',
-                        timeout: 500}
+                        timeout: 1500}
                     );
                 },
                 showError: function(msg) {
@@ -16,7 +16,7 @@ issueTrackerApp.factory('notify',
                         text: msg + "</br>",
                         type: 'error',
                         layout: 'topCenter',
-                        timeout: 1000}
+                        timeout: 1500}
                     );
                 }
             }

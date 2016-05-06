@@ -24,7 +24,7 @@ issueTrackerApp.controller('IssuesCtrl',
                         $scope.myIssues = issues.data.Issues;
                     }, function (err) {
                         var serverError = err.statusText;
-                        notify.showError("Request failed", serverError);
+                       notify.showError("Request failed", serverError);
                     }
                 );
 
@@ -33,7 +33,7 @@ issueTrackerApp.controller('IssuesCtrl',
                     $scope.issuesById=issues.data;
                     }, function (err) {
                         var serverError = err.statusText;
-                        notify.showError("Request failed", serverError);
+                       // notify.showError("Request failed", serverError);
                     }
                 );
 
