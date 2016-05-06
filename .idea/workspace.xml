@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcf8824d-c2d2-4a28-b7ff-e4b0f09788a3" name="Default" comment="Design update">
+    <list default="true" id="fcf8824d-c2d2-4a28-b7ff-e4b0f09788a3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/services/projects-service.js" afterPath="$PROJECT_DIR$/app/js/services/projects-service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/home.html" afterPath="$PROJECT_DIR$/app/templates/home.html" />
     </list>
     <ignored path="SPA-AngularJS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -603,7 +601,13 @@
       <option name="project" value="LOCAL" />
       <updated>1462535460550</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Design update">
+      <created>1462536584927</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1462536584927</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="ToolWindowManager">
