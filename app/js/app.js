@@ -10,15 +10,15 @@ var issueTrackerApp = angular.module('issueTrackerApp',
 			function ($routeProvider) {
 				$routeProvider
 						.when('/login', {
-							templateUrl: 'templates/login.html',
+							templateUrl: 'templates/user-templates/login.html',
 							controller: 'HomeCtrl'
 						})
 						.when('/register', {
-							templateUrl: 'templates/register.html',
+							templateUrl: 'templates/user-templates/register.html',
 							controller: 'HomeCtrl'
 						})
 						.when('/logout', {
-							templateUrl: 'templates/logout.html',
+							templateUrl: 'templates/user-templates/logout.html',
                             data: {
                                 requireLogin: true
                             }
@@ -35,7 +35,7 @@ var issueTrackerApp = angular.module('issueTrackerApp',
 							templateUrl: '/'
 						})
 						.when('/projects', {
-							templateUrl: 'templates/projects.html',
+							templateUrl: 'templates/projects-templates/projects.html',
 							controller: 'ProjectsCtrl',
                             data: {
 								requireLogin: true,
@@ -43,42 +43,42 @@ var issueTrackerApp = angular.module('issueTrackerApp',
                             }
 						})
 						.when('/projects/:id', {
-							templateUrl: 'templates/project-view.html',
+							templateUrl: 'templates/projects-templates/project-view.html',
 							controller: 'ProjectViewCtrl',
                             data: {
 								requireLogin: true
                             }
 						})
 						.when('/add', {
-							templateUrl: 'templates/add-project.html',
+							templateUrl: 'templates/projects-templates/add-project.html',
 							controller: 'ProjectsCtrl',
                             data: {
 								requireLogin: true
                             }
 						})
 						.when('/projects/:id/edit',{
-							templateUrl: 'templates/project-edit.html',
+							templateUrl: 'templates/projects-templates/project-edit.html',
 							controller: 'ProjectsCtrl',
 							data: {
 								requireLogin: true
 							}
 						})
 						.when('/projects/:id/add-issue', {
-							templateUrl: 'templates/add-issue.html',
+							templateUrl: 'templates/issues-templates/add-issue.html',
 							controller: 'IssuesCtrl',
 							data: {
 								requireLogin: true
 							}
 						})
                         .when('/issues/:id/', {
-                            templateUrl: 'templates/issue-view.html',
+                            templateUrl: 'templates/issues-templates/issue-view.html',
                             controller: 'IssuesCtrl',
                             data: {
                                 requireLogin: true
                             }
                         })
 						.when('/profile', {
-							templateUrl: 'templates/profile-details.html',
+							templateUrl: 'templates/user-templates/profile-details.html',
 							controller: 'UserCtrl',
 							data: {
 								requireLogin: true
@@ -94,7 +94,7 @@ var issueTrackerApp = angular.module('issueTrackerApp',
                     if (!authorization.isLoggedUser() && next.data.requireLogin) {
                         $location.path('/');
                     }
-					if (authorization.isUserAdmin() && next.data.requireAdmin) {
+					if (!authorization.isUserAdmin() && next.data.requireAdmin) {
 						$location.path('/');
 					}
                 }

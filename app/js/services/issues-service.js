@@ -56,7 +56,6 @@ issueTrackerApp.factory('issuesService',
                     },
                     data: issue
                 };
-
                 $http(request)
                     .then(function (response) {
                         deferred.resolve(response);
@@ -65,7 +64,6 @@ issueTrackerApp.factory('issuesService',
                     });
                 return deferred.promise;
             }
-
 
             function getIssueById(id) {
                 var deferred = $q.defer();

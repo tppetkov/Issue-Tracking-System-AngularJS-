@@ -40,11 +40,9 @@ issueTrackerApp.controller('IssuesCtrl',
             issuesService.getIssueById($scope.issueId)
                 .then(function (issue){
                     $scope.issueById=issue.data;
-                    console.log($scope.issueById.Author.Id);
-                    console.log($scope.userAuth.getUserId())
                     }, function (err) {
                     var serverError = err.statusText;
-                    notify.showError("Request failed", serverError);
+                    //notify.showError("Request failed", serverError);
                     }
                 );
 

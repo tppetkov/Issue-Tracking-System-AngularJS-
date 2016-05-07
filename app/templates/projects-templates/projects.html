@@ -1,5 +1,5 @@
 <h1 class="page-header">Projects</h1>
-<div class="jumbotron container">
+<div class="jumbotron container" ng-if="userAuth.isUserAdmin()">
     <a href="#/add">
         <button class="btn-default">Add new project</button>
     </a>
