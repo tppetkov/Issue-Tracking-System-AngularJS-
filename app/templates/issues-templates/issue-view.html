@@ -38,11 +38,11 @@
                     userAuth.getUserId()==issueById.Assignee.Id ||
                     userAuth.isUserAdmin()">
             <h4>Add comment:</h4>
-            <textarea row="5"
+            <textarea row="3"
                       class="form-control"
                       required="required"
                       ng-model="comment">
-                            </textarea>
+            </textarea>
             <button type="submit"
                     class="btn-primary"
                     ng-click="addComment(comment)">

@@ -1,5 +1,11 @@
 <div ng-controller="CommonCtrl">
     <h1 class="page-header">Affiliated projects/ Issues</h1>
+    <div ng-if="userAuth.isUserAdmin()">
+        <h2>Admin user recognized!</h2>
+        <a href="#/add">
+            <button class="btn-primary">Add new project</button>
+        </a>
+    </div>
     <a ng-click="showContainer('projects')" aria-expanded="false" data-toggle="tab">
         <button class="btn-lg">
             Projects
