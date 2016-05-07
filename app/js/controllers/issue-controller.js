@@ -9,7 +9,8 @@ issueTrackerApp.controller('IssuesCtrl',
         'authorization',
         '$routeParams',
         'projectsService',
-        function($scope,$location,issuesService,notify,authorization,$routeParams,projectsService){
+        'commentsService',
+        function($scope,$location,issuesService,notify,authorization,$routeParams,projectsService,commentsService){
 
             $scope.userAuth = authorization;
             $scope.currentPage = 1;
@@ -24,7 +25,7 @@ issueTrackerApp.controller('IssuesCtrl',
                         $scope.myIssues = issues.data.Issues;
                     }, function (err) {
                         var serverError = err.statusText;
-                       notify.showError("Request failed", serverError);
+                       notify.showError("Request failed", err.statusText);
                     }
                 );
 
@@ -33,7 +34,7 @@ issueTrackerApp.controller('IssuesCtrl',
                     $scope.issuesByProjectId=issues.data;
                     }, function (err) {
                         var serverError = err.statusText;
-                       // notify.showError("Request failed", serverError);
+                       // notify.showError("Request failed", err.statusText);
                     }
                 );
 
@@ -42,42 +43,52 @@ issueTrackerApp.controller('IssuesCtrl',
                     $scope.issueById=issue.data;
                     }, function (err) {
                     var serverError = err.statusText;
-                    //notify.showError("Request failed", serverError);
+                    //notify.showError("Request failed", err.statusText);
                     }
                 );
 
-            $scope.addIssue = function addIssue(issueToAdd) {
-                var issueToSend = {
-                    Title: issueToAdd.Title,
-                    Description: issueToAdd.Description,
-                    DueDate: issueToAdd.DueDate,
+            $scope.addIssue = function addIssue(issue) {
+                var issueToAdd= {
+                    Title: issue.Title,
+                    Description: issue.Description,
+                    DueDate: issue.DueDate,
                     ProjectId: $routeParams.id,
-                    AssigneeId: issueToAdd.AssigneeId,
-                    PriorityId: issueToAdd.PriorityId
+                    AssigneeId: issue.AssigneeId,
+                    PriorityId: issue.PriorityId
                 };
-                issuesService.addIssue(issueToSend)
+                issuesService.addIssue(issueToAdd)
                     .then(function success() {
                         notify.showInfo("Issue successful added!");
                     }, function error(err) {
                         notify.showError("Add failed!", err.statusText);
                     })
             };
-
-            $scope.editIssue = function editIssue(issue,id) {
-                var issueToSend = {
+            //TODO:Refactor edit Issue to catch project id
+            $scope.editIssue = function editIssue(issue,issueID) {
+                var issueToEdit = {
                     Title: issue.Title,
                     Description: issue.Description,
                     DueDate: issue.DueDate,
+                    ProjectId: $routeParams.id,
                     AssigneeId: issue.AssigneeId,
                     PriorityId: issue.PriorityId
                 };
-                issuesService.editIssue(issueToSend,$scope.issueId)
+                issuesService.editIssue(issueToEdit,$scope.issueId)
                     .then(function success() {
                         notify.showInfo("Issue successful edited!");
                     }, function error(err) {
                         notify.showError("Edit failed!", err.statusText);
                     })
             };
+
+            commentsService.getIssueComments($routeParams.id)
+                .then(function success(data) {
+                    $scope.Comments = data;
+                    console.log(data);
+                }, function error(err) {
+                    notify.showError('Request failed', err.statusText);
+                });
+
 
             projectsService.getProjectById($scope.issueId)
                 .then(function success(data) {
@@ -89,7 +100,7 @@ issueTrackerApp.controller('IssuesCtrl',
                         $scope.allUsers = allUsers;
                     }, function (err) {
                         var serverError = err.data.error_description;
-                        notify.showError("Request failed", serverError);
+                        notify.showError("Request failed", err.statusText);
                     }
                 );
         }

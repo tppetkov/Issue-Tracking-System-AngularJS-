@@ -15,7 +15,7 @@ issueTrackerApp.controller('UserCtrl',
                             $scope.allUsers = allUsers;
                         }, function (err) {
                             var serverError = err.data.error_description;
-                            notify.showError("Request failed", serverError);
+                            notify.showError("Request failed", err.statusText);
                         }
                     );
             };
@@ -25,7 +25,7 @@ issueTrackerApp.controller('UserCtrl',
                     .then(function (data) {
                             notify.showInfo("User was made as admin!", data);
                         }, function (err) {
-                            notify.showError("Request failed", err);
+                            notify.showError("Request failed", err.statusText);
                         }
                     );
             };
@@ -36,7 +36,7 @@ issueTrackerApp.controller('UserCtrl',
                         console.log(data);
                             notify.showInfo("Password changed!", data);
                         }, function (err) {
-                            notify.showError("Request failed", err);
+                            notify.showError("Request failed", err.statusText);
                         }
                     );
             };

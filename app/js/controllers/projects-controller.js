@@ -58,7 +58,7 @@ issueTrackerApp.controller('ProjectsCtrl',
                     },
                     function (err) {
                         var serverError = err.data.error_description;
-                        notify.showError("Request failed", serverError);
+                        notify.showError("Request failed", err.statusText);
                     }
                 );
 
@@ -69,7 +69,7 @@ issueTrackerApp.controller('ProjectsCtrl',
                 },
                 function (err) {
                     var serverError = err.data.error_description;
-                    notify.showError("Request failed", serverError);
+                    notify.showError("Request failed", err.statusText);
                 }
             );
             var getAllUsers = authorization.getAllUsers()
@@ -77,7 +77,7 @@ issueTrackerApp.controller('ProjectsCtrl',
                         $scope.allUsers = allUsers;
                     }, function (err) {
                         var serverError = err.data.error_description;
-                        notify.showError("Request failed", serverError);
+                        notify.showError("Request failed", err.statusText);
                     }
                 );
             $scope.userAuth = authorization;
