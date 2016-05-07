@@ -29,11 +29,11 @@ issueTrackerApp.factory('commentsService',
                 var deferred = $q.defer();
                 var request = {
                     method: 'POST',
-                    url: baseUrl + 'issues/' + issueId + '/comments',
+                    url: BASE_URL + 'issues/' + issueId + '/comments',
                     headers: {
                         Authorization: "Bearer " + sessionStorage["token"]
                     },
-                    data: comment
+                    data: {text: comment}
                 };
                 $http(request)
                     .then(function success(response) {

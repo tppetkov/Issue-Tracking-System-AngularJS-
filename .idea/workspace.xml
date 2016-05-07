@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcf8824d-c2d2-4a28-b7ff-e4b0f09788a3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/js/services/comments-service.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/controllers/issue-controller.js" afterPath="$PROJECT_DIR$/app/js/controllers/issue-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/controllers/projects-controller.js" afterPath="$PROJECT_DIR$/app/js/controllers/projects-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/controllers/user-controller.js" afterPath="$PROJECT_DIR$/app/js/controllers/user-controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/services/comments-service.js" afterPath="$PROJECT_DIR$/app/js/services/comments-service.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/issues-templates/issue-view.html" afterPath="$PROJECT_DIR$/app/templates/issues-templates/issue-view.html" />
     </list>
     <ignored path="SPA-AngularJS.iws" />
@@ -29,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="projects-controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/js/controllers/projects-controller.js">
+      <file leaf-file-name="project-view.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/projects-templates/project-view.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="69" selection-start-line="71" selection-start-column="69" selection-end-line="71" selection-end-column="69" />
+            <state vertical-scroll-proportion="-1.9615384">
+              <caret line="3" column="89" selection-start-line="3" selection-start-column="74" selection-end-line="3" selection-end-column="89" />
               <folding />
             </state>
           </provider>
@@ -44,16 +42,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-14.384615">
               <caret line="22" column="21" selection-start-line="20" selection-start-column="12" selection-end-line="22" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user-controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/js/controllers/user-controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="77" selection-start-line="17" selection-start-column="77" selection-end-line="17" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -72,8 +60,8 @@
       <file leaf-file-name="issue-controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/js/controllers/issue-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.69863015">
-              <caret line="86" column="38" selection-start-line="86" selection-start-column="38" selection-end-line="86" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.24315068">
+              <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -82,18 +70,18 @@
       <file leaf-file-name="issue-view.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/issues-templates/issue-view.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.615385">
-              <caret line="31" column="38" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="38" />
+            <state vertical-scroll-proportion="-11.653846">
+              <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery-2.1.1.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/lib/jquery-2.1.1.js">
+      <file leaf-file-name="authorization.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/js/services/authorization.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="3742" column="7" selection-start-line="3742" selection-start-column="7" selection-end-line="3742" selection-end-column="7" />
+              <caret line="105" column="30" selection-start-line="105" selection-start-column="21" selection-end-line="105" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -102,8 +90,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.038462">
-              <caret line="81" column="67" selection-start-line="81" selection-start-column="67" selection-end-line="81" selection-end-column="67" />
+            <state vertical-scroll-proportion="-13.730769">
+              <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -113,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/app/js/services/issues-service.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="74" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="74" />
+              <caret line="69" column="31" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -123,7 +111,17 @@
         <entry file="file://$PROJECT_DIR$/app/js/services/comments-service.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+              <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notify-service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/js/services/notify-service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -134,8 +132,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -177,12 +175,13 @@
         <option value="$PROJECT_DIR$/app/templates/issues-templates/issue-edit.html" />
         <option value="$PROJECT_DIR$/app/js/services/issues-service.js" />
         <option value="$PROJECT_DIR$/app/js/services/coments-service.js" />
-        <option value="$PROJECT_DIR$/app/js/services/comments-service.js" />
         <option value="$PROJECT_DIR$/app/js/controllers/projects-controller.js" />
         <option value="$PROJECT_DIR$/app/js/controllers/user-controller.js" />
+        <option value="$PROJECT_DIR$/app/templates/issues-templates/add-comment.html" />
         <option value="$PROJECT_DIR$/app/index.html" />
-        <option value="$PROJECT_DIR$/app/js/controllers/issue-controller.js" />
         <option value="$PROJECT_DIR$/app/templates/issues-templates/issue-view.html" />
+        <option value="$PROJECT_DIR$/app/js/services/comments-service.js" />
+        <option value="$PROJECT_DIR$/app/js/controllers/issue-controller.js" />
       </list>
     </option>
   </component>
@@ -699,7 +698,13 @@
       <option name="project" value="LOCAL" />
       <updated>1462614229604</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Show comments added">
+      <created>1462616155204</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1462616155204</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TodoView">
@@ -768,7 +773,8 @@
     <MESSAGE value="Issue view added" />
     <MESSAGE value="Structure updated" />
     <MESSAGE value="Edit issue added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit issue added" />
+    <MESSAGE value="Show comments added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Show comments added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -777,14 +783,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/user-templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -961,14 +959,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/services/notify-service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/js/services/projects-service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -979,26 +969,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/services/authorization.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="105" column="30" selection-start-line="105" selection-start-column="21" selection-end-line="105" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-32.03846">
           <caret line="49" column="31" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/projects-templates/project-view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="89" selection-start-line="3" selection-start-column="74" selection-end-line="3" selection-end-column="89" />
           <folding />
         </state>
       </provider>
@@ -1094,22 +1068,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/services/issues-service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="74" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/services/comments-service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/lib/jquery-2.1.1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1142,14 +1100,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.038462">
-          <caret line="81" column="67" selection-start-line="81" selection-start-column="67" selection-end-line="81" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/issues-templates/add-issue.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.384615">
@@ -1158,18 +1108,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/projects-templates/project-view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9615384">
+          <caret line="3" column="89" selection-start-line="3" selection-start-column="74" selection-end-line="3" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/services/authorization.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="105" column="30" selection-start-line="105" selection-start-column="21" selection-end-line="105" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.730769">
+          <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/services/issues-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="69" column="31" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/issues-templates/issue-view.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.615385">
-          <caret line="31" column="38" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="38" />
+        <state vertical-scroll-proportion="-11.653846">
+          <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/services/comments-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/services/notify-service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/controllers/issue-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69863015">
-          <caret line="86" column="38" selection-start-line="86" selection-start-column="38" selection-end-line="86" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.24315068">
+          <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
           <folding />
         </state>
       </provider>
