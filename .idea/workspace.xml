@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fcf8824d-c2d2-4a28-b7ff-e4b0f09788a3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/controllers/issue-controller.js" afterPath="$PROJECT_DIR$/app/js/controllers/issue-controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/services/comments-service.js" afterPath="$PROJECT_DIR$/app/js/services/comments-service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/issues-templates/issue-view.html" afterPath="$PROJECT_DIR$/app/templates/issues-templates/issue-view.html" />
     </list>
     <ignored path="SPA-AngularJS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,6 +23,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.20376712">
+              <caret line="80" column="79" selection-start-line="80" selection-start-column="79" selection-end-line="80" selection-end-column="79" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="project-view.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/projects-templates/project-view.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -47,20 +53,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="project-view-controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/js/controllers/project-view-controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="44" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="issue-controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="issue-controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/js/controllers/issue-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24315068">
+            <state vertical-scroll-proportion="0.0">
               <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
               <folding />
             </state>
@@ -704,7 +700,13 @@
       <option name="project" value="LOCAL" />
       <updated>1462616155204</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Add comments add">
+      <created>1462618502517</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1462618502517</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TodoView">
@@ -774,7 +776,8 @@
     <MESSAGE value="Structure updated" />
     <MESSAGE value="Edit issue added" />
     <MESSAGE value="Show comments added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Show comments added" />
+    <MESSAGE value="Add comments add" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add comments add" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1017,17 +1020,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="79" selection-start-line="80" selection-start-column="79" selection-end-line="80" selection-end-column="79" />
-          <folding>
-            <marker date="1462612173036" expanded="true" signature="2484:2769" placeholder="{&quot;templateUrl&quot;: 'templates/issues-templates/issue-edit.html'...}" />
-            <marker date="1462612173036" expanded="true" signature="2661:2743" placeholder="{&quot;requireLogin&quot;: true...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/projects-templates/project-edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.8846154">
@@ -1166,8 +1158,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/js/controllers/issue-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24315068">
+        <state vertical-scroll-proportion="0.0">
           <caret line="88" column="21" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20376712">
+          <caret line="80" column="79" selection-start-line="80" selection-start-column="79" selection-end-line="80" selection-end-column="79" />
           <folding />
         </state>
       </provider>
