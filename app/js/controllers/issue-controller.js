@@ -30,10 +30,21 @@ issueTrackerApp.controller('IssuesCtrl',
 
             issuesService.getIssuesByProjectId($scope.issueId)
                 .then(function (issues){
-                    $scope.issuesById=issues.data;
+                    $scope.issuesByProjectId=issues.data;
                     }, function (err) {
                         var serverError = err.statusText;
                        // notify.showError("Request failed", serverError);
+                    }
+                );
+
+            issuesService.getIssueById($scope.issueId)
+                .then(function (issue){
+                    $scope.issueById=issue.data;
+                    console.log($scope.issueById.Author.Id);
+                    console.log($scope.userAuth.getUserId())
+                    }, function (err) {
+                    var serverError = err.statusText;
+                    notify.showError("Request failed", serverError);
                     }
                 );
 
@@ -56,12 +67,7 @@ issueTrackerApp.controller('IssuesCtrl',
 
             projectsService.getProjectById($scope.issueId)
                 .then(function success(data) {
-                    console.log(data.data.Priorities);
                     $scope.projectPriorities = data.data.Priorities;
                 });
-
-            $scope.show = function () {
-                $scope.showIssues = !$scope.showIssues;
-            };
         }
     ]);

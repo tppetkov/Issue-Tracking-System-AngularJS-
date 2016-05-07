@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<h2 class="page-header">Issues</h2>
+<div class="form-group">
+    <a href="#/issues/{{issueById.Id}}"
+       ng-if="userAuth.getUserId()==issueById.Author.Id || userAuth.isUserAdmin()">
+        <button class="btn-sm">
+            Edit issue
+        </button>
+    </a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>DueDate</th>
+            <th>Assignee</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{issueById.Title}}</td>
+            <td>{{issueById.Description}}</td>
+            <td>{{issueById.DueDate}}</td>
+            <td>{{issueById.Assignee.Username}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
