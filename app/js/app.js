@@ -38,21 +38,22 @@ var issueTrackerApp = angular.module('issueTrackerApp',
 							templateUrl: 'templates/projects.html',
 							controller: 'ProjectsCtrl',
                             data: {
-                                requireLogin: true
+								requireLogin: true,
+								requireAdmin: true
                             }
 						})
 						.when('/projects/:id', {
 							templateUrl: 'templates/project-view.html',
 							controller: 'ProjectViewCtrl',
                             data: {
-                                requireLogin: true
+								requireLogin: true
                             }
 						})
 						.when('/add', {
 							templateUrl: 'templates/add-project.html',
 							controller: 'ProjectsCtrl',
                             data: {
-                                requireLogin: true
+								requireLogin: true
                             }
 						})
 						.when('/projects/:id/edit',{
@@ -86,6 +87,9 @@ var issueTrackerApp = angular.module('issueTrackerApp',
                     if (!authorization.isLoggedUser() && next.data.requireLogin) {
                         $location.path('/');
                     }
+					if (authorization.isUserAdmin() && next.data.requireAdmin) {
+						$location.path('/');
+					}
                 }
             });
         });

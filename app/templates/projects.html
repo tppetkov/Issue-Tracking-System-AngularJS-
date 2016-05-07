@@ -1,29 +1,27 @@
-<div class="row">
-    <div class="col-md-6">
-        <div class="row">
-
-            <h1>Projects</h1>
-
-        </div>
-
-        <div class="jumbotron col-md-12">
-            <ul ng-repeat="project in allProjects">
-                <li>
-                    {{project.Name}}
-                    <a href="#/projects/{{project.Id}}">
-                        <button class="btn-sm">View</button>
-                    </a>
-                </li>
-              
-            </ul>
-             
-        </div>
-
-        <a href="#/add">
-            <button class="btn-default">Add new project</button>
-        </a>
+<h1 class="page-header">Projects</h1>
+<div class="jumbotron container">
+    <a href="#/add">
+        <button class="btn-default">Add new project</button>
+    </a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Lead</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="project in allProjects">
+            <td><a href="#projects/{{project.Id}}">{{project.Id}}</a></td>
+            <td>{{project.Name}}</td>
+            <td>{{project.Description}}</td>
+            <td>{{project.Lead.Username}}</td>
+        </tr>
+        </tbody>
+    </table>
       <pagination total-items="numItems" ng-model="projectsRequestParams.startPage"
-  items-per-page="projectsRequestParams.pageSize" ng-change="reloadAds()"
-  max-size="20" boundary-links="true">
-    </div>
+                  items-per-page="projectsRequestParams.pageSize"
+                  max-size="20" boundary-links="true">
 </div>
