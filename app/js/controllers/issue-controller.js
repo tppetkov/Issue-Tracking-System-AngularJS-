@@ -63,9 +63,34 @@ issueTrackerApp.controller('IssuesCtrl',
                     })
             };
 
+            $scope.editIssue = function editIssue(issue,id) {
+                var issueToSend = {
+                    Title: issue.Title,
+                    Description: issue.Description,
+                    DueDate: issue.DueDate,
+                    AssigneeId: issue.AssigneeId,
+                    PriorityId: issue.PriorityId
+                };
+                issuesService.editIssue(issueToSend,$scope.issueId)
+                    .then(function success() {
+                        notify.showInfo("Issue successful edited!");
+                    }, function error(err) {
+                        notify.showError("Edit failed!", err.statusText);
+                    })
+            };
+
             projectsService.getProjectById($scope.issueId)
                 .then(function success(data) {
                     $scope.projectPriorities = data.data.Priorities;
                 });
+
+            var getAllUsers = authorization.getAllUsers()
+                .then(function (allUsers) {
+                        $scope.allUsers = allUsers;
+                    }, function (err) {
+                        var serverError = err.data.error_description;
+                        notify.showError("Request failed", serverError);
+                    }
+                );
         }
     ]);

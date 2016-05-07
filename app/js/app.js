@@ -77,6 +77,13 @@ var issueTrackerApp = angular.module('issueTrackerApp',
                                 requireLogin: true
                             }
                         })
+                        .when('/issues/:id/edit', {
+                            templateUrl: 'templates/issues-templates/issue-edit.html',
+                            controller: 'IssuesCtrl',
+                            data: {
+                                requireLogin: true
+                            }
+                        })
 						.when('/profile', {
 							templateUrl: 'templates/user-templates/profile-details.html',
 							controller: 'UserCtrl',

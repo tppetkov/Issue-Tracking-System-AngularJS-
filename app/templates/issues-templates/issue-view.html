@@ -1,6 +1,6 @@
 <h2 class="page-header">Issues</h2>
 <div class="form-group">
-    <a href="#/issues/{{issueById.Id}}"
+    <a href="#/issues/{{issueById.Id}}/edit"
        ng-if="userAuth.getUserId()==issueById.Author.Id || userAuth.isUserAdmin()">
         <button class="btn-sm">
             Edit issue

@@ -1,4 +1,4 @@
-<h2 class="page-header">Add issue</h2>
+<h2 class="page-header">Edit issue</h2>
 <div class="jumbotron container">
     <form name="addIssueForm">
         <div class="form-group">
@@ -19,12 +19,13 @@
         </div>
         <div class="form-group">
             <select ng-model="issue.AssigneeId" id="addId">
-                <option ng-repeat="user in allUsers | orderBy:'Username'" value="{{user.Id}}">{{user.Username}}</option>
+                <option ng-repeat="user in allUsers | orderBy:'Username'" value="{{user.Id}}">{{user.Username}}
+                </option>
             </select>
         </div>
         <div class="form-group">
             <label for="priorities">Priority</label>
-            <select class="form-control" id="priorities" ng-model="issue.PriorityId" required>
+            <select class="form-control" id="priorities" ng-model="issue.PriorityId">
                 <option value="">Choose priority</option>
                 <option ng-repeat="pr in projectPriorities" value="{{pr.Id}}">{{pr.Name}}</option>
             </select>
@@ -33,6 +34,8 @@
             <label for="issueLabels">Labels</label>
             <input type="text" id="issueLabels" class="form-control" ng-model="issue.Labels" />
         </div>
-        <button class="btn btn-primary" ng-disabled="addIssueForm.$invalid" ng-click="addIssue(issue)">Add issue</button>
+        <button class="btn btn-primary" ng-disabled="addIssueForm.$invalid" ng-click="editIssue(issue)">
+            Edit issue
+        </button>
     </form>
 </div>
