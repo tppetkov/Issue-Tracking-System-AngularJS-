@@ -9,15 +9,13 @@ issueTrackerApp.controller('UserCtrl',
         'authorization',
         function ($scope, projectsService, notify, authentication, authorization) {
 
-            $scope.getAllUsers = function getAllUsers(){
-                authorization.getAllUsers()
-                    .then(function (allUsers) {
-                            $scope.allUsers = allUsers;
-                        }, function (err) {
-                            notify.showError("Request failed", err.statusText);
-                        }
-                    );
-            };
+            var getAllUsers = authorization.getAllUsers()
+                .then(function (allUsers) {
+                        $scope.allUsers = allUsers;
+                    }, function (err) {
+                        notify.showError("Request failed", err.statusText);
+                    }
+                );
 
             $scope.makeAdmin = function makeAdmin(id) {
                 authorization.makeAdmin(id)

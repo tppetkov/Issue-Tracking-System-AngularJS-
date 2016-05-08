@@ -36,7 +36,22 @@
                id="repeatNewPassword"
                placeholder="Repeat Passowrd"
                ng-model="user.confirmPassword" />
-        <button type="submit" class="btn btn-primary pull-right" ng-disabled="changeUserPassForm.$invalid" ng-click="changePassword(user)">Change Password
+        <button type="submit"
+                class="btn btn-primary pull-right"
+                ng-disabled="changeUserPassForm.$invalid"
+                ng-click="changePassword(user)">
+            Change Password
         </button>
     </form>
+</div>
+<br>
+<div ng-if="userAuth.isUserAdmin()" class="form-group">
+    <label for="makeAdmin"> You can make some user admin: </label><br>
+    <select id="makeAdmin" ng-model="userID">
+        <option ng-repeat="user in allUsers | orderBy:'Username'" value="{{user.Id}}">{{user.Username}}</option>
+    </select>
+    <button class="btn btn-primary pull-right"
+            ng-click="makeAdmin(userID)">
+        Make admin
+    </button>
 </div>
