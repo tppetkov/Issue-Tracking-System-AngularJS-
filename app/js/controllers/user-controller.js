@@ -14,7 +14,6 @@ issueTrackerApp.controller('UserCtrl',
                     .then(function (allUsers) {
                             $scope.allUsers = allUsers;
                         }, function (err) {
-                            var serverError = err.data.error_description;
                             notify.showError("Request failed", err.statusText);
                         }
                     );

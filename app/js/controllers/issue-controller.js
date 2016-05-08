@@ -24,7 +24,6 @@ issueTrackerApp.controller('IssuesCtrl',
                 .then(function (issues) {
                         $scope.myIssues = issues.data.Issues;
                     }, function (err) {
-                        var serverError = err.statusText;
                        notify.showError("Request failed", err.statusText);
                     }
                 );
@@ -33,7 +32,6 @@ issueTrackerApp.controller('IssuesCtrl',
                 .then(function (issues){
                     $scope.issuesByProjectId=issues.data;
                     }, function (err) {
-                        var serverError = err.statusText;
                        // notify.showError("Request failed", err.statusText);
                     }
                 );
@@ -42,7 +40,6 @@ issueTrackerApp.controller('IssuesCtrl',
                 .then(function (issue){
                     $scope.issueById=issue.data;
                     }, function (err) {
-                    var serverError = err.statusText;
                     //notify.showError("Request failed", err.statusText);
                     }
                 );
@@ -105,7 +102,6 @@ issueTrackerApp.controller('IssuesCtrl',
                 .then(function (allUsers) {
                         $scope.allUsers = allUsers;
                     }, function (err) {
-                        var serverError = err.data.error_description;
                         notify.showError("Request failed", err.statusText);
                     }
                 );

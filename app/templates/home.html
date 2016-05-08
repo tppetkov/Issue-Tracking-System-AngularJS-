@@ -43,7 +43,7 @@
             </table>
             <a href="#/add">
                 <button class="btn-default" ng-if="userAuth.isUserAdmin()">Add new project</button>
-            </a><pagination total-items="numItems" ng-model="projectsRequestParams.startPage"
+            </a><pagination total-items="allPages" ng-model="projectsRequestParams.startPage"
                             items-per-page="projectsRequestParams.pageSize"
                             max-size="5" boundary-links="true">
         </div>
@@ -73,7 +73,7 @@
                 </tr>
                 </tbody>
             </table>
-            <pagination total-items="numItems" ng-model="issuesRequestParams.startPage"
+            <pagination total-items="allPages" ng-model="issuesRequestParams.startPage"
                         items-per-page="issuesRequestParams.pageSize"
                         max-size="5" boundary-links="true">
         </div>
