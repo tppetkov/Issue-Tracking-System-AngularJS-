@@ -41,7 +41,6 @@ issueTrackerApp.controller('IssuesCtrl',
             issuesService.getIssueById($scope.issueId)
                 .then(function (issue){
                     $scope.issueById=issue.data;
-                    console.log($scope.issueById);
                     }, function (err) {
                     var serverError = err.statusText;
                     //notify.showError("Request failed", err.statusText);
@@ -90,7 +89,6 @@ issueTrackerApp.controller('IssuesCtrl',
                 });
 
             $scope.addComment = function(comment) {
-                console.log(comment);
                 commentsService.addCommentToIssue($routeParams.id, comment)
                     .then(function success(data) {
                     }, function error(err) {

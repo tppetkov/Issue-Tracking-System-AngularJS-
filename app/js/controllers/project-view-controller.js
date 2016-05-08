@@ -14,13 +14,10 @@ issueTrackerApp.controller('ProjectViewCtrl',
                 projectsService.getProjectById(id)
                     .then(function (response) {
                         $scope.project = response.data;
-                        console.log(response.data);
+                        //console.log(response.data);
                         $scope.priorities = response.data.priorities;
-                        if(sessionStorage.userName === response.data.Lead.Username) {
-                            $scope.isLeader = sessionStorage.userName;
-                        }
                         }, function (err) {
-                            notify.showError("Request " + "'Get project by ID'" + " failed", err.statusText);
+                            notify.showError("Request failed", err.statusText);
                         }
                     );
             };
