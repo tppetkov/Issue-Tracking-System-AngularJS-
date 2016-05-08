@@ -4,13 +4,29 @@
         <form name="loginUserForm">
             <div class="form-group">
                 <label for="loginUserEmail" class="text-center">Username</label>
-                <input type="text" required=required class="form-control" id="loginUserEmail" placeholder="Email" ng-model="loginUser.userEmail">
+                <input type="text"
+                       required=required
+                       class="form-control"
+                       id="loginUserEmail"
+                       placeholder="Email"
+                       ng-model="loginUser.userEmail">
 
                 <label for="loginPassword">Password</label>
-                <input type="password" required=required min-length="3" max-length="100" class="form-control" id="loginPassword" placeholder="Passowrd" ng-model="loginUser.password">
+                <input type="password"
+                       required=required
+                       min-length="3" max-length="100"
+                       class="form-control"
+                       id="loginPassword"
+                       placeholder="Passowrd"
+                       ng-model="loginUser.password">
             </div>
             <br />
-            <button type="submit" class="btn btn-primary pull-right" ng-disabled="loginUserForm.$invalid" ng-click="login(loginUser)">Login</button>
+            <button type="submit"
+                    class="btn btn-primary pull-right"
+                    ng-disabled="loginUserForm.$invalid"
+                    ng-click="login(loginUser)">
+                Login
+            </button>
         </form>
     </div>
 
